@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# 强制 HTTP 跳转到 HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
